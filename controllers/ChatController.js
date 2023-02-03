@@ -11,7 +11,7 @@ export const createChat = async (req, res) => {
   console.log(chat, 'chat');
   if (chat.length === 0) {
     const newChat = new ChatModel({
-      members: [req.body.senderId, req.body.receiverId]
+      members: [req.body.senderId, req.body.receiverId],
     });
     try {
       const result = await newChat.save();
