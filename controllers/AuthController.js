@@ -17,7 +17,6 @@ export const sendOtp = async (req, res) => {
     } else {
       otpSend(email)
         .then((response) => {
-          // console.log(response, 'backkkkkkkk');
           res.status(200).send({ message: 'OTP Sent', response: response, success: true });
         })
         .catch((err) => console.log('ERROR', err));

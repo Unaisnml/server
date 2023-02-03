@@ -12,7 +12,7 @@ import { verifyToken } from '../middleware/Auth.js';
 const router = express.Router();
 
 /* READ */
-router.get('/', verifyToken, getFeedPosts);
+router.get('/', getFeedPosts);
 router.get('/:userId/posts', verifyToken, getUserPosts);
 router.get('/postId-for-delete', getPostForDelete);
 
@@ -22,6 +22,6 @@ router.patch('/:id/like', verifyToken, likePost);
 /* COMMENT */
 router.patch('/comment', commentPost);
 
-router.post('/post-delete', verifyToken, deletePost);
+router.post('/post-delete', deletePost);
 
 export default router;
